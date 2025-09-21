@@ -29,5 +29,5 @@ jobs:
         
       - name: Run the application
         run: npm start
-
+        working-directory: ./OSTAD-Assignment-module-3
 
