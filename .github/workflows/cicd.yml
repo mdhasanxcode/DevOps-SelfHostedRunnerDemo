@@ -1,4 +1,4 @@
-name: CICD Pipeline for Demo 2
+name: CICD Pipeline
 on: [push]
 
 jobs:
@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/chechout@v4
+        uses: actions/checkout@v4
       
       - name: Install Node V22
         uses: actions/setup-node@v5
