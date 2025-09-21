@@ -1,0 +1,30 @@
+name: CICD Pipeline for Demo 2
+on: [push]
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/chechout@v4
+      
+      - name: Install Node V22
+        uses: actions/setup-node@v5
+        with: 
+          node-version: 22
+
+      - name: Run Test
+        run: npm run check
+
+
+  Deploy:
+    needs: Test
+    runs-on: self-hosted
+    steps:
+      - name: checkout
+        uses: actions/chechout@v4
+        
+      - name: Run the application
+        run: npm start
+
+
